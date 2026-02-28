@@ -1,0 +1,58 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-recycle",
+      "description": "Eco friendly recycling visualization",
+      "imageUrl": "/products/recycling_sustainability.png",
+      "imageHint": "recycling sustainability"
+    },
+    {
+      "id": "tn-banana-fiber-bag",
+      "description": "Banana Fiber Tote Bag",
+      "imageUrl": "/products/banana_fiber_bag.png",
+      "imageHint": "banana fiber bag"
+    },
+    {
+      "id": "tn-palm-leaf-basket",
+      "description": "Palm Leaf Basket",
+      "imageUrl": "/products/palm_leaf_basket.png",
+      "imageHint": "palm leaf basket"
+    },
+    {
+      "id": "tn-silk-saree-cushion",
+      "description": "Upcycled Silk Saree Cushion",
+      "imageUrl": "/products/silk_saree_cushion.png",
+      "imageHint": "silk saree cushion"
+    },
+    {
+      "id": "tn-coir-floor-mat",
+      "description": "Coir Floor Mat",
+      "imageUrl": "/products/coir_floor_mat.png",
+      "imageHint": "coir floor mat"
+    },
+    {
+      "id": "tn-temple-incense",
+      "description": "Meenakshi Temple Flower Incense",
+      "imageUrl": "/products/temple_incense.png",
+      "imageHint": "temple flowe incense"
+    },
+    {
+      "id": "tn-coconut-bowl",
+      "description": "Coconut Shell Handcrafted Bowl",
+      "imageUrl": "/products/coconut_bowl.png",
+      "imageHint": "coconut shell bowl"
+    },
+    {
+      "id": "product-bag",
+      "description": "Bag made from ocean plastic",
+      "imageUrl": "/products/ocean_plastic_bag.jpg",
+      "imageHint": "ocean plastic bag"
+    },
+    {
+      "id": "product-bottle",
+      "description": "Recycled plastic water bottle",
+      "imageUrl": "/products/recycled_bottle.jpg",
+      "imageHint": "recycled bottle"
+    }
+  ]
+}

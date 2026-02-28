@@ -1,0 +1,152 @@
+
+{
+  "entities": {
+    "UserProfile": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "UserProfile",
+      "type": "object",
+      "description": "Represents a user's profile on the Waste2Product platform, storing personal information, green credit balance, and overall eco-contributions.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the UserProfile entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "The full name of the user."
+        },
+        "email": {
+          "type": "string",
+          "description": "The user's email address, used for contact and identification.",
+          "format": "email"
+        },
+        "address": {
+          "type": "string",
+          "description": "The user's default pickup address."
+        },
+        "walletBalance": {
+          "type": "number",
+          "description": "Current balance of Green Credits the user possesses."
+        },
+        "totalWasteSubmittedKg": {
+          "type": "number",
+          "description": "Total weight in kilograms of waste submitted by the user."
+        },
+        "carbonSavedKg": {
+          "type": "number",
+          "description": "Estimated total kilograms of carbon emissions saved due to the user's recycling efforts."
+        },
+        "ecoScore": {
+          "type": "number",
+          "description": "An AI-calculated score reflecting the user's overall environmental contribution and recycling efficiency."
+        },
+        "leaderboardRank": {
+          "type": "number",
+          "description": "The user's current rank on the platform's leaderboard."
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp when the user profile was created.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "email",
+        "walletBalance",
+        "totalWasteSubmittedKg",
+        "carbonSavedKg",
+        "ecoScore",
+        "leaderboardRank",
+        "createdAt"
+      ]
+    },
+    "Pickup": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Pickup",
+      "type": "object",
+      "description": "Manages the scheduling and tracking of waste pickups requested by users.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Pickup entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to the UserProfile who requested the pickup."
+        },
+        "date": {
+          "type": "string",
+          "description": "The date scheduled for the waste pickup.",
+          "format": "date"
+        },
+        "timeSlot": {
+          "type": "string",
+          "description": "The specific time slot scheduled for the pickup."
+        },
+        "address": {
+          "type": "string",
+          "description": "The full address for the waste pickup."
+        },
+        "lat": {
+          "type": "number",
+          "description": "Geographical latitude of the pickup location."
+        },
+        "lng": {
+          "type": "number",
+          "description": "Geographical longitude of the pickup location."
+        },
+        "status": {
+          "type": "string",
+          "description": "Current status of the pickup (e.g., 'Scheduled', 'In Transit', 'Completed')."
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp when the pickup record was created.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "userId",
+        "date",
+        "timeSlot",
+        "address",
+        "lat",
+        "lng",
+        "status",
+        "createdAt"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "google"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "UserProfile",
+          "schema": {
+            "$ref": "#/backend/entities/UserProfile"
+          },
+          "description": "Stores individual user profiles."
+        }
+      },
+      {
+        "path": "/pickups/{pickupId}",
+        "definition": {
+          "entityName": "Pickup",
+          "schema": {
+            "$ref": "#/backend/entities/Pickup"
+          },
+          "description": "Global collection for all scheduled pickups."
+        }
+      }
+    ]
+  }
+}
